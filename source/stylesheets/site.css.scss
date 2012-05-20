@@ -1,0 +1,268 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset";
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base";
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint";
+
+// Import the non-default scaffolding module.
+@import "blueprint/scaffolding";
+
+@import "compass/css3";
+
+@import "partials/colors";
+
+@include blueprint;
+
+body
+{
+	@include blueprint-typography(true);
+	@include blueprint-utilities;
+	@include blueprint-debug;
+	@include blueprint-interaction;
+
+	font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+	background-color: $pageback-color-light;
+	color: $black-color;
+
+	h1
+	{
+		color: $brand-color;
+	}
+
+	h2, h3, h4, h5
+	{
+		color: $brand-color-dark;
+	}
+
+	#container
+	{
+		@include container;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		
+		#header
+		{
+			@include column($blueprint-grid-columns);
+			
+			background-color: $brand-color-darker;
+			color: $brand-color;
+			
+			border-bottom-style: solid;
+			border-color: #brand-color-light;
+			border-width: 5px;
+			
+			#header-content
+			{
+				$content-columns: ceil(3 * $blueprint-grid-columns / 4);
+				@include column($content-columns);
+			
+				h1
+				{
+					margin: $headerfooter_title_margins;
+				}
+				
+				h2
+				{
+					margin: $headerfooter_title_margins;
+					color: $function-color;
+				}
+			}
+			
+			#header-rightcol
+			{
+				$content-columns: floor($blueprint-grid-columns / 4);
+				@include column($content-columns, true);
+				
+				position: relative;
+				left: 80px;
+				margin-top: 20px;
+				
+				img
+				{
+					width: 100px;
+					display: block;
+				}
+				
+				p
+				{
+					width: 100px;
+					text-align: center;
+					color: $function-color;
+				}
+			}
+		}
+		
+		#navbar
+		{
+			@include column($blueprint-grid-columns);
+
+			padding-top: 10px;
+			padding-bottom: 10px;
+		
+			ul
+			{
+				list-style-type: none;
+				list-style-position: initial;
+				list-style-image: initial;
+
+				li
+				{
+					display: inline;
+					list-style-type: none;
+					list-style-position: initial;
+					background: $white-color;
+					
+					
+					a
+					{
+						display: block;
+						@include float-left;
+						text-decoration: none;
+						text-align: center;
+						text-transform: uppercase;
+						color: $action-color;
+						font-size: 1em;
+						padding: 3px 20px 3px 0px;
+						
+						
+						&:hover
+						{
+							color: $action-color-lighter;
+						}
+						
+						&.active
+						{
+							text-decoration: underline;
+							color: $action-color-darker;
+							
+							&:hover
+							{
+							color: $action-color-lighter;
+							}
+						}
+					}
+				}				
+				
+			}
+		}
+		
+		#page
+		{
+		
+			#banner
+			{
+			
+				margin-bottom: 10px;
+			
+			}
+					
+			#content
+			{
+				$content-columns: ceil(3 * $blueprint-grid-columns / 4);
+				@include column($content-columns);
+				
+				p
+				{
+					padding-right: 30px;
+				}
+				
+			}
+			
+			#rightcol
+			{
+				$content-columns: floor($blueprint-grid-columns / 4);
+				@include column($content-columns, true);
+				
+			}
+		}
+		
+		#footer
+		{
+			@include column ($blueprint-grid-columns);
+			background-color: $brand-color-darker;
+			color: $brand-color;
+			margin-top: 30px;
+			
+			border-top-style: solid;
+			border-color: #brand-color-light;
+			border-width: 5px;
+			
+			#footer-content
+			{
+				$content-columns: ceil(3 * $blueprint-grid-columns / 4);
+				@include column($content-columns);
+				
+				h1
+				{
+					margin: 7px;
+					margin-left: $headerfooter_title_margins;
+					font-size: 1.25em;
+				}
+				
+				h2
+				{
+					margin: 7px;
+					margin-left: $headerfooter_title_margins;
+					color: $function-color;
+					font-size: 1em;
+				}
+				
+			}
+			
+			#footer-rightcol
+			{
+				$content-columns: floor($blueprint-grid-columns / 4);
+				@include column($content-columns, true);
+				
+				#footer-navbar
+				{
+					@include column($blueprint-grid-columns);
+				
+					margin-bottom: 10px;
+					padding-top: 10px;
+					padding-bottom: 10px;
+				
+					ul
+					{
+						list-style-type: none;
+						list-style-position: initial;
+						list-style-image: initial;
+		
+						li
+						{
+							display: inline;
+							list-style-type: none;
+							list-style-position: initial;
+							background: $white-color;
+							
+							
+							a
+							{
+								display: block;
+								@include float-left;
+								text-decoration: none;
+								text-align: center;
+								text-transform: uppercase;
+								color: $action-color;
+								font-size: 1em;
+								padding: 3px 12px 3px 0px;
+								
+								
+								&:hover
+								{
+									color: $action-color-lighter;
+								}
+							}
+						}				
+						
+					}
+				}
+			}
+		}
+	}
+
+
+}

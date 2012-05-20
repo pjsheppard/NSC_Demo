@@ -1,0 +1,30 @@
+<% content_for :head do %>
+  <title><%= page_title "Home" %></title>
+<% end%>
+
+<div id="page">
+    
+  <div id="content">
+  
+    <h1>Middleman Template Project</h1>
+
+    <h2>A quick-start template for a Middleman project.</h2>
+    
+    <% 5.times do %>
+      <p><%= lorem.paragraph %></p>
+    <% end %>
+    
+  </div>
+  
+  <div id="rightcol">
+    <!-- Right Column -->
+    
+    <div id="advert">
+      
+      <img src="<%= lorem.image('180x400', :background_color => 'aaa', :color => 'fff') %>"/>
+      
+    </div>
+    
+  </div>
+  
+</div>

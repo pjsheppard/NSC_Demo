@@ -1,0 +1,30 @@
+<% content_for :head do %>
+  <title><%= page_title "About" %></title>
+<% end%>
+
+<div id="page">
+    
+  <div id="content">
+  
+    <h1>About Page</h1>
+
+    <h2>A Second Page</h2>
+    
+    <% 7.times do %>
+      <p><%= lorem.paragraph %></p>
+    <% end %>
+    
+  </div>
+  
+  <div id="rightcol">
+    <!-- Right Column -->
+    
+    <div id="advert">
+      
+      <img src="<%= lorem.image('180x500', :background_color => 'aaa', :color => 'fff') %>"/>
+      
+    </div>
+    
+  </div>
+  
+</div>

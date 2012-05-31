@@ -10,11 +10,18 @@
 // Import the non-default scaffolding module.
 @import "blueprint/scaffolding";
 
+// Import for flexible box
 @import "compass/css3";
 
-@import "partials/colors";
+// Import for rounded corners
+@import "compass/css3/border-radius";
 
+// To generate css equivalent to the blueprint css but with your
+// configuration applied, uncomment:
 @include blueprint;
+
+// Importing custom mixins
+@import "partials/mixins";
 
 body
 {
@@ -23,246 +30,685 @@ body
 	@include blueprint-debug;
 	@include blueprint-interaction;
 
-	font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-	background-color: $pageback-color-light;
-	color: $black-color;
+	background: $col-background;
 
-	h1
-	{
-		color: $brand-color;
-	}
-
-	h2, h3, h4, h5
-	{
-		color: $brand-color-dark;
-	}
-
-	#container
+	#container 
 	{
 		@include container;
-		margin-top: 30px;
-		margin-bottom: 30px;
+		background: $col-container-background;
 		
-		#header
+		a
 		{
-			@include column($blueprint-grid-columns);
-			
-			background-color: $brand-color-darker;
-			color: $brand-color;
-			
-			border-bottom-style: solid;
-			border-color: #brand-color-light;
-			border-width: 5px;
-			
-			#header-content
-			{
-				$content-columns: ceil(3 * $blueprint-grid-columns / 4);
-				@include column($content-columns);
-			
-				h1
-				{
-					margin: $headerfooter_title_margins;
-				}
-				
-				h2
-				{
-					margin: $headerfooter_title_margins;
-					color: $function-color;
-				}
-			}
-			
-			#header-rightcol
-			{
-				$content-columns: floor($blueprint-grid-columns / 4);
-				@include column($content-columns, true);
-				
-				position: relative;
-				left: 80px;
-				margin-top: 20px;
-				
-				img
-				{
-					width: 100px;
-					display: block;
-				}
-				
-				p
-				{
-					width: 100px;
-					text-align: center;
-					color: $function-color;
-				}
-			}
+			color: $col-site-green;
 		}
 		
-		#navbar
+		#header, #footer 
 		{
-			@include column($blueprint-grid-columns);
-
-			padding-top: 10px;
-			padding-bottom: 10px;
+			@include column($blueprint-grid-columns); 
+			color: $col-site-white;
+		}
 		
+		#header
+		{	
+			margin-bottom: 20px;
+			border-bottom-style: solid;
+			border-color: $col-borders;
+			border-width: 1px;
+			background-image:url("../images/NSC.png");
+			height: 190px;
+
+			a
+			{
+				color: $col-site-yellow;
+				text-decoration: none;
+			}
+
+			h1
+			{
+				font-size: 4em;
+				color: $col-site-yellow;
+				margin: 10px 0px 10px 0px;
+				margin-left: 10px;
+			}
+			
+			#navbar
+			{
+				margin-top: 55px;
+				margin-left: 10px;
+				
+				ul
+				{
+
+					padding: 0px;
+					margin: 0px;
+					list-style-type: none;
+					list-style-position: initial;
+					list-style-image: initial;		
+					
+					li
+					{
+						display: inline;
+						list-style-type: none;
+						list-style-position: initial;
+						list-style-image: initial;
+						margin: 0px;
+						padding: 0px;
+						
+						a
+						{
+							display:block;
+							@include float-left;
+							text-decoration: none;
+							text-align: center;
+							line-height: 2.5em;
+							color: $col-site-white;
+							font-size: 2em;
+							padding:3px 20px 3px 0px;
+						
+							&:hover
+							{
+								color: lighten( $col-site-yellow, 10% );
+								text-decoration: underline;
+							}
+							
+							&.active
+							{
+								color:$col-site-yellow;
+								
+								&:hover
+								{
+									color: lighten( $col-site-yellow, 20% );
+								}
+							}
+						}
+					}
+				}
+			}
+				
+		}
+
+		#sectionnavbar
+		{
+			
 			ul
 			{
+
+				padding: 0px;
+				margin: 0px;
 				list-style-type: none;
 				list-style-position: initial;
 				list-style-image: initial;
-
+				
 				li
 				{
 					display: inline;
 					list-style-type: none;
 					list-style-position: initial;
-					background: $white-color;
-					
+					list-style-image: initial;
+					margin: 0px;
+					padding: 0px;
 					
 					a
 					{
-						display: block;
+						@include border-top-radius($corner-radius);
+						display:block;
 						@include float-left;
 						text-decoration: none;
-						text-align: center;
-						text-transform: uppercase;
-						color: $action-color;
-						font-size: 1em;
-						padding: 3px 20px 3px 0px;
-						
-						
+						background-color: $col-site-darkgreen;
+						color: $col-site-white;
+						font-size: 1.25em;
+						margin-right: 1px;
+						padding:3px 10px 3px 10px;
+						border-bottom-style: solid;
+						border-width: 1px;
+						border-color: $col-site-black;
+					
 						&:hover
 						{
-							color: $action-color-lighter;
+							background-color: $col-site-green;
 						}
 						
 						&.active
 						{
-							text-decoration: underline;
-							color: $action-color-darker;
+							background-color: $col-site-lightgreen;
+							border-color:  $col-site-lightgreen;
 							
 							&:hover
 							{
-							color: $action-color-lighter;
+								background-color: lighten($col-site-green, 20%);
 							}
 						}
 					}
-				}				
-				
+				}
 			}
+		}
+		
+		.nosectionnav
+		{
+			@include border-top-left-radius($corner-radius);
 		}
 		
 		#page
 		{
-		
-			#banner
-			{
-			
-				margin-bottom: 10px;
-			
-			}
-					
-			#content
-			{
-				$content-columns: ceil(3 * $blueprint-grid-columns / 4);
-				@include column($content-columns);
-				
-				p
-				{
-					padding-right: 30px;
-				}
-				
-			}
-			
-			#rightcol
-			{
-				$content-columns: floor($blueprint-grid-columns / 4);
-				@include column($content-columns, true);
-				
-			}
-		}
-		
-		#footer
-		{
-			@include column ($blueprint-grid-columns);
-			background-color: $brand-color-darker;
-			color: $brand-color;
-			margin-top: 30px;
-			
+			@include column($blueprint-grid-columns);		
+			background-color: $col-site-white;
+			margin-bottom: 10px;
+
 			border-top-style: solid;
-			border-color: #brand-color-light;
-			border-width: 5px;
+			border-bottom-style: solid;
+			border-width: 12px;
+			border-color: $col-site-lightgreen;
 			
-			#footer-content
+			@include border-top-right-radius($corner-radius);
+			@include border-bottom-radius($corner-radius);
+		
+			h1, h2, h3, h4
 			{
-				$content-columns: ceil(3 * $blueprint-grid-columns / 4);
-				@include column($content-columns);
+				color: $col-site-green;
+			}
+
+			.pagetext
+			{
+				@include padded(20px);
 				
 				h1
 				{
-					margin: 7px;
-					margin-left: $headerfooter_title_margins;
-					font-size: 1.25em;
+					font-size: 2em;
+			
+					.section
+					{
+						margin-top: 20px;
+						padding-top: 20px;
+						border-top-style: solid;
+						border-color: $col-site-black;
+						border-width: 1px;
+					}
 				}
 				
 				h2
 				{
-					margin: 7px;
-					margin-left: $headerfooter_title_margins;
-					color: $function-color;
+					font-size: 1.5em;
+					margin-top: 10px;
+				}
+				
+				h3 
+				{
+					font-size: 1.25em;
+				}
+				
+				h4 
+				{
 					font-size: 1em;
 				}
 				
-			}
-			
-			#footer-rightcol
-			{
-				$content-columns: floor($blueprint-grid-columns / 4);
-				@include column($content-columns, true);
-				
-				#footer-navbar
+				.inpageanchor
 				{
-					@include column($blueprint-grid-columns);
+					text-decoration: none;
+					color: $col-site-green;
+				}
 				
+				.highlighttext
+				{
+					border-style: dotted;
+					border-collapse: $col-site-black;
+					border-width: 1px;
+					//@include border-radius($corner-radius);
+					@include padded(10px);
+					background-color: lighten($col-site-green, 50%);
+					margin-bottom: 20px;
+					
+					.last
+					{
+						margin-bottom: 0px;
+					}
+				}
+				
+				.contactbox
+				{
+					width: 100%;
 					margin-bottom: 10px;
-					padding-top: 10px;
-					padding-bottom: 10px;
+					.details, .title
+					{
+						padding: 10px;
+					}
+					.details
+					{
+						background-color: $col-site-lightgreen; 
+						font-size: 1.25em;
+					}
+					.title
+					{
+						@include border-top-radius($corner-radius);
+						background-color: $col-site-green;
+						color: $col-site-white;
+						font-size: 1.5em;
+					}
+				}
 				
+				.navbox
+				{
+					width: 100%;
+					margin-bottom: 10px;
+					.links, .title
+					{
+						padding: 10px;
+					}
+					.links
+					{
+						background-color: $col-site-lightgreen; 
+						
+						ul
+						{
+		
+							padding: 0px;
+							margin: 0px;
+							list-style-type: none;
+							list-style-position: initial;
+							list-style-image: initial;		
+							
+							li
+							{
+								display: inline;
+								list-style-type: none;
+								list-style-position: initial;
+								list-style-image: initial;
+								margin: 0px;
+								padding: 0px;
+								
+								a
+								{
+									display:block;
+									text-decoration: none;
+									text-align: left;
+									color: $col-site-darkgreen;
+									font-size: 1em;
+									padding:3px 15px 3px 0px;
+								
+									&:hover
+									{
+										color: lighten( $col-site-white, 10% );
+										text-decoration: underline;
+									}
+									
+									&.active
+									{
+										color:$col-site-lightgreen;
+										
+										&:hover
+										{
+											color: lighten( $col-site-green, 20% );
+										}
+									}
+								}
+							}
+						}
+					}
+					.title
+					{
+						@include border-top-radius($corner-radius);
+						background-color: $col-site-green;
+						color: $col-site-white;
+						font-size: 1.25em;
+					}
+				}
+			}
+
+			#content 
+			{
+				// Three quarters of the grid columns, rounding up.
+				$content-columns: ceil(3 * $blueprint-grid-columns / 4);
+				// true means its the last column in the row
+				@include column($content-columns);
+			}
+	
+			#contentright
+			{
+				// Three quarters of the grid columns, rounding up.
+				$content-columns: ceil(3 * $blueprint-grid-columns / 4);
+				// true means its the last column in the row
+				@include column($content-columns, true);
+			}	
+					
+			#sidebar 
+			{
+				// One quarter of the grid columns, rounding down.
+				$sidebar-columns: floor($blueprint-grid-columns / 4);
+				@include column($sidebar-columns, true); 
+				
+				#imagelist
+				{
 					ul
 					{
 						list-style-type: none;
-						list-style-position: initial;
-						list-style-image: initial;
+						
+						li
+						{
+							img
+							{
+								@include float-right;
+								border: 1px solid #000000;
+								width: 220px;
+								margin-bottom: 30px;
+							}
+						}
+					}
+				}
+				
+				.highlighttext
+				{
+					border-style: dotted;
+					border-collapse: $col-site-black;
+					border-width: 1px;
+					//@include border-radius($corner-radius);
+					@include padded(10px);
+					background-color: lighten($col-site-green, 50%);
+					margin-bottom: 20px;
+					
+					.last
+					{
+						margin-bottom: 0px;
+					}
+				}
+			}
+			
+			#sidebarleft
+			{
+				// One quarter of the grid columns, rounding down.
+				$sidebar-columns: floor($blueprint-grid-columns / 4);
+				@include column($sidebar-columns); 
+				
+				
+				img
+				{
+					margin: 20px;
+					border: 1px solid #000000;
+					width: 210px;
+				}
+				
+				.title
+				{
+					margin-left: 20px;
+				}
+				
+				.highlighttext
+				{
+					border-style: dotted;
+					border-collapse: $col-site-black;
+					border-width: 1px;
+					//@include border-radius($corner-radius);
+					@include padded(10px);
+					background-color: lighten($col-site-green, 50%);
+					margin-bottom: 20px;
+					margin-left: 20px;
+					
+					.last
+					{
+						margin-bottom: 0px;
+					}
+				}
+			}
+		}
 		
+		#committeepage 
+		{
+			@include column($blueprint-grid-columns);	
+			padding-left: 20px;
+			padding-top: 20px;
+			background-color: $col-site-white;
+		
+			border-top-style: solid;
+			border-bottom-style: solid;
+			border-width: 12px;
+			border-color: $col-site-lightgreen;
+			
+			@include border-top-right-radius($corner-radius);
+			@include border-bottom-radius($corner-radius);
+		
+			h1, h2, h3, h4
+			{
+				color: $col-site-green;
+			}
+			
+			.inpageanchor
+			{
+				text-decoration: none;
+				color: $col-site-green;
+			}
+				
+			#leftcol
+			{
+				$content-columns: floor($blueprint-grid-columns / 2);
+				@include column($content-columns);
+			}
+			
+			#rightcol
+			{
+				$content-columns: ceil($blueprint-grid-columns / 2);
+				@include column($content-columns, true);
+			}
+			
+			.break
+			{
+				@include reset-float;
+				clear: both;
+			}
+			
+			.navbox
+			{	
+				width: 100%-20px;	
+				padding-right: 40px;
+				margin-bottom: 10px;
+					
+				.links, .title
+				{
+					padding: 10px;
+				}
+				.links
+				{
+					background-color: $col-site-lightgreen; 
+						
+					ul
+					{		
+						padding: 0px;
+						margin: 0px;
+						list-style-type: none;
+						list-style-position: initial;
+						list-style-image: initial;		
+							
 						li
 						{
 							display: inline;
 							list-style-type: none;
 							list-style-position: initial;
-							background: $white-color;
-							
-							
+							list-style-image: initial;
+							margin: 0px;
+							padding: 0px;
+								
 							a
 							{
-								display: block;
-								@include float-left;
+								display:block;
 								text-decoration: none;
-								text-align: center;
-								text-transform: uppercase;
-								color: $action-color;
+								text-align: left;
+								color: $col-site-darkgreen;
 								font-size: 1em;
-								padding: 3px 12px 3px 0px;
-								
+								padding:3px 15px 3px 0px;
 								
 								&:hover
 								{
-									color: $action-color-lighter;
+									color: lighten( $col-site-white, 10% );
+									text-decoration: underline;
+								}
+									
+								&.active
+								{
+									color:$col-site-lightgreen;
+									
+									&:hover
+									{
+										color: lighten( $col-site-green, 20% );
+									}
 								}
 							}
-						}				
-						
+						}
 					}
 				}
+				.title
+				{
+					@include border-top-radius($corner-radius);
+					background-color: $col-site-green;
+					color: $col-site-white;
+					font-size: 1.25em;
+				}
+			}
+		
+			.photogroup
+			{
+				margin: 10px;	
+				
+				.grouptitle
+				{
+					font-size: 1.25em;
+					align: center;
+				}
+			
+				ul
+				{
+					list-style-type: none;
+					list-style-position: initial;
+					list-style-image: initial;
+					
+					li
+					{
+						list-style-type: none;
+						list-style-position: initial;
+					
+						.committeemember
+						{
+							@include float-left;
+							margin: 10px;
+							margin-bottom: 20px;
+						
+							.positiontitle
+							{
+								@include float-left;
+								clear: left;
+								white-space: normal;  // this controls word wrap
+								width: 50px;
+								height: 50px;
+								
+							}
+							
+							.memberimage
+							{
+								@include float-left;
+								clear: left;
+								
+								width: 60px;
+							}
+						
+							.membername
+							{
+								@include float-left;
+								clear:left;
+								white-space: normal;
+								width: 50px;
+								padding-top: 5px;
+								padding-bottom: 10px;
+							}
+						}
+						
+						.spacingblank
+						{
+							@include float-left;
+							margin: 10px;
+							margin-bottom: 20px;
+							width: 60px;
+						}
+					}
+				}
+			
 			}
 		}
+		
+		
+		#footer
+		{
+				@include column($blueprint-grid-columns);
+				border-top-style: solid;
+				border-color: $col-borders;
+				border-width: 1px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				
+				#footertext
+				{
+					@include float-left;
+				
+					.text
+					{
+						color: $col-site-lightgreen;
+						padding: 0px;
+						margin: 0px;
+						font-size: 1.5em;
+					}
+					
+					.fineprint
+					{
+						font-size: 0.75em;
+						color: $col-site-white;
+					}
+				}
+				
+				#navbar
+				{
+					
+					@include float-right;
+					
+					ul
+					{
+	
+						padding: 0px;
+						margin: 0px;
+						list-style-type: none;
+						list-style-position: initial;
+						list-style-image: initial;
+						
+						
+						li
+						{
+							display: inline;
+							list-style-type: none;
+							list-style-position: initial;
+							list-style-image: initial;
+							margin: 0px;
+							padding: 0px;
+							
+							a
+							{
+								display:block;
+								@include float-left;
+								text-decoration: none;
+								line-height: 50px;
+								color: $col-site-white;
+								font-size: 1em;
+
+								padding-right: 10px;
+
+								.last
+								{
+									padding-right: 0px;
+								}
+
+								&:hover
+								{
+									color: lighten( $col-site-green, 10% );
+									text-decoration: underline;
+								}
+							}
+						}
+					}
+				}
+		}
+		
 	}
-
-
 }

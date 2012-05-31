@@ -73,7 +73,7 @@ helpers do
   
   # site_name method
   def site_name
-    "Middleman Template"
+    "The Nottingham Sailing Club"
   end
   
   # page_title method
@@ -83,13 +83,17 @@ helpers do
   end
   
   # nav_link method
-  def nav_link(displayname, target, currentpagename, last)
+  def nav_link(args)
+    displayname = args[:displayname]
+    target = args[:target]
+    last = args[:lastlink]
+  
     activeclass = ""
     
     if last == true then
-      activeclass = displayname == currentpagename ? " class=\"active last\" " : " class=\"last\" "
+      activeclass = displayname == @current_page_name ? " class=\"active last\" " : " class=\"last\" "
     else
-      activeclass = displayname == currentpagename ? " class=\"active\" " : " "
+      activeclass = displayname == @current_page_name ? " class=\"active\" " : " "
     end
     "<a href=\"" + target + "\"" + activeclass + ">" + displayname + "</a>"
   end

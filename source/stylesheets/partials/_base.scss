@@ -13,3 +13,20 @@ $blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $b
 // Custom Constants
 
 $headerfooter_title_margins: 20px;
+
+$indent: 30px;
+$navbar-height: 1.75em;
+$corner-radius: 8px;
+
+$col-site-white: #ffffff;
+$col-site-black: #000000;
+$col-site-gray: #444444;
+$col-site-green: #697F3A;
+$col-site-lightgreen: #419D4D;
+$col-site-darkgreen: #343F1D;
+$col-site-yellow: #F8F67B;
+
+$col-background: $col-site-gray;
+$col-container-background: $col-site-gray;
+$col-titlebar-background: $col-site-black;
+$col-borders: lighten($col-site-gray, 50%);

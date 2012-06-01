@@ -23,6 +23,9 @@
 // Importing custom mixins
 @import "partials/mixins";
 
+// Import colors file
+@import "partials/colors";
+
 body
 {
 	@include blueprint-typography(true);
@@ -30,102 +33,114 @@ body
 	@include blueprint-debug;
 	@include blueprint-interaction;
 
-	background: $col-background;
+	font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+	background-color: $pageback-color-light;
+	color: $black-color;
 
 	#container 
 	{
 		@include container;
-		background: $col-container-background;
+		background: $pageback-color;
 		
 		a
 		{
-			color: $col-site-green;
+			color: $action-color;
 		}
 		
 		#header, #footer 
 		{
 			@include column($blueprint-grid-columns); 
-			color: $col-site-white;
+			color: $function-color;
 		}
 		
 		#header
 		{	
 			margin-bottom: 20px;
 			border-bottom-style: solid;
-			border-color: $col-borders;
+			border-color: $brand-color-darker;
 			border-width: 1px;
-			background-image:url("../images/NSC.png");
-			height: 190px;
+			//background-image:url("../images/NSC.png");
+			//height: 190px;
+			background: $brand-color;
+
+      #logoimage
+      {
+        @include float-left;
+        margin-left: 10px;
+      }
 
 			a
 			{
-				color: $col-site-yellow;
+				color: $function-color;
 				text-decoration: none;
 			}
 
 			h1
 			{
-				font-size: 4em;
-				color: $col-site-yellow;
+				font-size: 3em;
+				color: $function-color;
 				margin: 10px 0px 10px 0px;
 				margin-left: 10px;
+				line-height: 2em;
 			}
 			
-			#navbar
-			{
-				margin-top: 55px;
-				margin-left: 10px;
-				
-				ul
-				{
 
-					padding: 0px;
-					margin: 0px;
-					list-style-type: none;
-					list-style-position: initial;
-					list-style-image: initial;		
-					
-					li
-					{
-						display: inline;
-						list-style-type: none;
-						list-style-position: initial;
-						list-style-image: initial;
-						margin: 0px;
-						padding: 0px;
-						
-						a
-						{
-							display:block;
-							@include float-left;
-							text-decoration: none;
-							text-align: center;
-							line-height: 2.5em;
-							color: $col-site-white;
-							font-size: 2em;
-							padding:3px 20px 3px 0px;
-						
-							&:hover
-							{
-								color: lighten( $col-site-yellow, 10% );
-								text-decoration: underline;
-							}
-							
-							&.active
-							{
-								color:$col-site-yellow;
-								
-								&:hover
-								{
-									color: lighten( $col-site-yellow, 20% );
-								}
-							}
-						}
-					}
-				}
-			}
 				
 		}
+
+    #navbar
+    {
+      @include column($blueprint-grid-columns);
+      margin-left: 10px;
+      
+      ul
+      {
+
+        padding: 0px;
+        margin: 0px;
+        list-style-type: none;
+        list-style-position: initial;
+        list-style-image: initial;		
+        
+        li
+        {
+          display: inline;
+          list-style-type: none;
+          list-style-position: initial;
+          list-style-image: initial;
+          margin: 0px;
+          padding: 0px;
+          
+          a
+          {
+            display:block;
+            @include float-left;
+            text-decoration: none;
+            text-align: center;
+            line-height: 2.5em;
+            color: $action-color;
+            font-size: 2em;
+            padding:3px 20px 3px 0px;
+          
+            &:hover
+            {
+              color: $action-color-light;
+              text-decoration: underline;
+            }
+            
+            &.active
+            {
+              color: $action-color-lighter;
+              
+              &:hover
+              {
+                color: $action-color-lighter;
+              }
+            }
+          }
+        }
+      }
+    }
 
 		#sectionnavbar
 		{
@@ -150,11 +165,11 @@ body
 					
 					a
 					{
-						@include border-top-radius($corner-radius);
+						//@include border-top-radius($corner-radius);
 						display:block;
 						@include float-left;
 						text-decoration: none;
-						background-color: $col-site-darkgreen;
+						background-color: $action-color;
 						color: $col-site-white;
 						font-size: 1.25em;
 						margin-right: 1px;
@@ -165,17 +180,17 @@ body
 					
 						&:hover
 						{
-							background-color: $col-site-green;
+							background-color: $action-color-light;
 						}
 						
 						&.active
 						{
-							background-color: $col-site-lightgreen;
-							border-color:  $col-site-lightgreen;
+							background-color: $action-color-light;
+							border-color:  $action-color-light;
 							
 							&:hover
 							{
-								background-color: lighten($col-site-green, 20%);
+								background-color: $action-color-lighter;
 							}
 						}
 					}
@@ -191,20 +206,20 @@ body
 		#page
 		{
 			@include column($blueprint-grid-columns);		
-			background-color: $col-site-white;
+			background-color: $pageback-color-light;
 			margin-bottom: 10px;
 
 			border-top-style: solid;
 			border-bottom-style: solid;
 			border-width: 12px;
-			border-color: $col-site-lightgreen;
+			border-color: $action-color;
 			
 			@include border-top-right-radius($corner-radius);
 			@include border-bottom-radius($corner-radius);
 		
 			h1, h2, h3, h4
 			{
-				color: $col-site-green;
+				color: $brand-color;
 			}
 
 			.pagetext
@@ -254,7 +269,7 @@ body
 					border-width: 1px;
 					//@include border-radius($corner-radius);
 					@include padded(10px);
-					background-color: lighten($col-site-green, 50%);
+					background-color: $brand-color-lighter;
 					margin-bottom: 20px;
 					
 					.last
@@ -401,7 +416,7 @@ body
 					border-width: 1px;
 					//@include border-radius($corner-radius);
 					@include padded(10px);
-					background-color: lighten($col-site-green, 50%);
+					background-color: $brand-color-lighter;
 					margin-bottom: 20px;
 					
 					.last
@@ -437,7 +452,7 @@ body
 					border-width: 1px;
 					//@include border-radius($corner-radius);
 					@include padded(10px);
-					background-color: lighten($col-site-green, 50%);
+					background-color: $brand-color-lighter;
 					margin-bottom: 20px;
 					margin-left: 20px;
 					

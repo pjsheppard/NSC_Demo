@@ -1,6 +1,20 @@
-<div id="navbar">
-  <ul>
-    <li><%= nav_link "Home", "index.html", @current_page_name, false %></li>
-    <li><%= nav_link "About", "about.html", @current_page_name, true %></li>
-  </ul>
-</div>
+  <div id="navbar">
+    <ul>
+      <li><%= nav_link  :displayname => "Home", :target => "index.html",
+                      :lastlink => false %></li>
+      <li><%= nav_link  :displayname => "About", :target => "club.html",
+                      :lastlink => false %></li>
+      <li><%= nav_link  :displayname => "Calendar", :target => "calendar.html",
+                      :lastlink => false %></li>
+      <li><%= nav_link  :displayname => "Results", :target => "results.html",
+                      :lastlink => false %></li>
+      <li><%= nav_link  :displayname => "Juniors", :target => "juniors.html",
+                      :lastlink => false %></li>
+      <li><%= nav_link  :displayname => "Learn", :target => "learn.html",
+                      :lastlink => false %></li>
+      <li><%= nav_link  :displayname => "Joining", :target => "joining.html",
+                      :lastlink => false %></li>
+      <li><%= nav_link  :displayname => "Contact Us", :target => "contact.html",
+                      :lastlink => false %></li>
+    </ul>
+  </div>

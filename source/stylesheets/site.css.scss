@@ -51,17 +51,19 @@ body
 		{
 			@include column($blueprint-grid-columns); 
 			color: $function-color;
+			background: $brand-color;
 		}
 		
 		#header
 		{	
-			margin-bottom: 20px;
-			border-bottom-style: solid;
-			border-color: $brand-color-darker;
-			border-width: 1px;
+		  margin-top: 30px;
+			//margin-bottom: 20px;
+			//border-bottom-style: solid;
+			//border-color: $brand-color-darker;
+			//border-width: 12px;
 			//background-image:url("../images/NSC.png");
 			//height: 190px;
-			background: $brand-color;
+			
 
       #logoimage
       {
@@ -425,7 +427,7 @@ body
 							{
 								@include float-right;
 								border: 1px solid #000000;
-								width: 220px;
+								width: 192px;
 								margin-bottom: 30px;
 							}
 						}
@@ -639,11 +641,11 @@ body
 		#footer
 		{
 				@include column($blueprint-grid-columns);
-				border-top-style: solid;
-				border-color: $col-borders;
-				border-width: 1px;
+				//border-top-style: solid;
+				//border-color: $col-borders;
+				//border-width: 1px;
 				margin-top: 10px;
-				margin-bottom: 10px;
+				margin-bottom: 30px;
 				
 				#footertext
 				{
@@ -651,23 +653,26 @@ body
 				
 					.text
 					{
-						color: $col-site-lightgreen;
+						color: $function-color;
 						padding: 0px;
 						margin: 0px;
+						margin-left: 10px;
 						font-size: 1.5em;
 					}
 					
 					.fineprint
 					{
 						font-size: 0.75em;
-						color: $col-site-white;
+						color: $function-color-light;
+						margin-left: 10px;
 					}
 				}
 				
-				#navbar
+				#linkbar
 				{
 					
 					@include float-right;
+					margin-right: 10px;
 					
 					ul
 					{
@@ -694,7 +699,7 @@ body
 								@include float-left;
 								text-decoration: none;
 								line-height: 50px;
-								color: $col-site-white;
+								color: $function-color-light;
 								font-size: 1em;
 
 								padding-right: 10px;
@@ -706,7 +711,7 @@ body
 
 								&:hover
 								{
-									color: lighten( $col-site-green, 10% );
+									color: $function-color-lighter;
 									text-decoration: underline;
 								}
 							}

@@ -225,6 +225,21 @@ body
 				color: $brand-color;
 			}
 
+      thead
+      {
+        text-decoration: underline;
+      }
+      
+      .fee
+      {
+        width: 150px;
+      }
+      
+      .price
+      {
+        width: 50px;
+      }
+					
       .highlighttext
       {
         border-style: dotted;
@@ -249,7 +264,7 @@ body
 
 			.pagetext
 			{
-				@include padded(20px);
+				padding: 20px 30px 20px 0px;
 				
 				h1
 				{
@@ -390,6 +405,9 @@ body
 						color: $col-site-white;
 						font-size: 1.25em;
 					}
+					
+
+					
 				}
 			}
 

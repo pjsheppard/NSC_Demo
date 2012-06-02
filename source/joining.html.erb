@@ -33,14 +33,12 @@
               <td class="fee">Fee</td>
               <td class="price">Price</td>
             </thead>
-            <tr>
-              <td>Entrance Fee for Ordinary Members</td>
-              <td>£25</td>
-            </tr>
-            <tr>
-              <td>Club Key Hire</td>
-              <td>£7</td>
-            </tr>
+            <% data.joiningfee.each do |f| %>
+              <tr>
+                <td><%= f.fee %></td>
+                <td><%= f.price %></td>
+              </tr>
+            <% end %>
           </table>
 
 					<h2>ANNUAL FEES</h2>
@@ -52,46 +50,12 @@
               <td class="fee">Fee</td>
               <td class="price">Price</td>
             </thead>
-            <tr>
-              <td>Ordinary Members</td>
-              <td>£96</td>
-            </tr>
-            <tr>
-              <td>Associate Members</td>
-              <td>£16</td>
-            </tr>
-            <tr>
-              <td>Junior Members (<18)</td>
-              <td>£16</td>
-            </tr>
-            <tr>
-              <td>Family Subscription Limit</td>
-              <td>£119</td>
-            </tr>
-            <tr>
-              <td>Intermediate Members (<21)</td>
-              <td>£25</td>
-            </tr>
-            <tr>
-              <td>Student Member</td>
-              <td>£25</td>
-            </tr>
-            <tr>
-              <td>Senior Members (60-69)</td>
-              <td>£72</td>
-            </tr>
-            <tr>
-              <td>Senior Members (70+)</td>
-              <td>£48</td>
-            </tr>
-            <tr>
-              <td>Social Members</td>
-              <td>£23</td>
-            </tr>
-            <tr>
-              <td>Temporary Members (per month)</td>
-              <td>£15</td>
-            </tr>     
+            <% data.subscriptionfee.each do |f| %>
+              <tr>
+                <td><%= f.fee %></td>
+                <td><%= f.price %></td>
+              </tr>
+            <% end %>    
           </table>
 
 					<h3>OTHER FEES</h3>
@@ -101,22 +65,12 @@
               <td class="fee">Fee</td>
               <td class="price">Price</td>
             </thead>
-            <tr>
-              <td>Boat Space in Dinghy Park</td>
-              <td>£18</td>
-            </tr>
-            <tr>
-              <td>Trailer kept in Dinghy Park</td>
-              <td>£5</td>
-            </tr>
-            <tr>
-              <td>B.W.B. Certificate</td>
-              <td>£10</td>
-            </tr>
-            <tr>
-              <td>RYA Affiliation</td>
-              <td>£4</td>
-            </tr>
+            <% data.otherfee.each do |f| %>
+              <tr>
+                <td><%= f.fee %></td>
+                <td><%= f.price %></td>
+              </tr>
+            <% end %>
           </table>
 					
 					<h3>Notes</h3>

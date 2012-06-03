@@ -84,6 +84,25 @@
 					</tr>
 				</table>
 
+        <table>
+          <thead>
+            <td>Date</td>
+            <td>Day</td>
+            <td>Venue</td>
+            <td>Event</td>
+          </thead>
+          <tbody>
+            <% data.socialevents.each do |e| %>
+              <tr>
+                <td><%= date_helper(e.date) %></td>
+                <td><%= day_helper(e.date) %></td>
+                <td><%= e.venue %></td>
+                <td><%= e.event %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
 				<p>Please see the notice board, website and your emails for more 
 				information about these events closer to the time.</p>
 				

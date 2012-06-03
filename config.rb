@@ -120,6 +120,32 @@ helpers do
     "<a href=\"" + target + "\"" + activeclass + ">" + displayname + "</a>"    
   end
   
+  # date_helper method
+  def date_helper(date)
+    d = Date.parse(date)
+    
+    daynum = d.strftime("%e")
+    monthname = d.strftime("%B")
+    
+    suffix =  if      ['1', '21', '31'].include?(daynum)  then "st"
+              elsif   ['2', '22'].include?(daynum)        then "nd"
+              elsif   ['3', '23'].include?(daynum)        then "rd"
+              else                                             "th"
+              end
+    
+    "#{daynum}#{suffix} #{monthname}"
+  end
+  
+  # day_helper method
+  def day_helper(date)
+    d = Date.parse(date)
+    
+    dayname = d.strftime("%^a")
+    
+    "#{dayname}"
+  end
+  
+  
 end
 # Change the CSS directory
 # set :css_dir, "alternative_css_directory"

@@ -124,16 +124,16 @@ helpers do
   def date_helper(date)
     d = Date.parse(date)
     
-    daynum = d.strftime("%e")
+    daynum = d.strftime("%e").to_i
     monthname = d.strftime("%B")
     
-    suffix =  if      ['1', '21', '31'].include?(daynum)  then "st"
-              elsif   ['2', '22'].include?(daynum)        then "nd"
-              elsif   ['3', '23'].include?(daynum)        then "rd"
-              else                                             "th"
+    suffix =  if      [1, 21, 31].include?(daynum)    then "st"
+              elsif   [2, 22].include?(daynum)        then "nd"
+              elsif   [3, 23].include?(daynum)        then "rd"
+              else                                         "th"
               end
     
-    "#{daynum}#{suffix} #{monthname}"
+    "#{daynum.to_s}#{suffix} #{monthname}"
   end
   
   # day_helper method

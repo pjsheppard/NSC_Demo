@@ -1,0 +1,65 @@
+---
+  - title: Commodore
+    avatar: ./images/stock_avatar.png
+    name:  Steve Bailey
+    group: 1
+  - title: Vice Commodore
+    avatar: ./images/stock_avatar.png
+    name:  Jim Penniston
+    group: 1
+  - title: Rear Commodore
+    avatar: ./images/stock_avatar.png
+    name:  Chris Abbott
+    group: 1
+  - title: Honorary Secretary
+    avatar: ./images/stock_avatar.png
+    name:  Bill Sylvester
+    group: 2
+  - title: Honorary Treasurer
+    avatar: ./images/stock_avatar.png
+    name:  Michael Brookman
+    group: 2
+  - title: Honorary Membership Secretary
+    avatar: ./images/stock_avatar.png
+    name:  Phil Sheppard
+    group: 2
+  - title: Honorary Social Secretary
+    avatar: ./images/stock_avatar.png
+    name:  Stephanie Abbott
+    group: 2
+  - title: none
+    avatar: ./images/stock_avatar.png
+    name:  Kirsten Sheppard
+    group: 3
+  - title: none
+    avatar: ./images/stock_avatar.png
+    name:  Trevor Marriott
+    group: 3
+  - title: none
+    avatar: ./images/stock_avatar.png
+    name:  Nigel Nurse
+    group: 3
+  - title: none
+    avatar: ./images/stock_avatar.png
+    name:  Karl Bird
+    group: 3
+  - title: none
+    avatar: ./images/stock_avatar.png
+    name:  Roger Ibbett
+    group: 3
+  - title: Honorary Sailing Secretary
+    avatar: ./images/stock_avatar.png
+    name:  Nigel Nurse
+    group: 4
+  - title: Honorary Bar Secretary
+    avatar: ./images/stock_avatar.png
+    name:  Margaret Nurse
+    group: 4
+  - title: Honorary Bosun
+    avatar: ./images/stock_avatar.png
+    name:  Phil Purkis
+    group: 4
+  - title: Honorary Training Secretary
+    avatar: ./images/stock_avatar.png
+    name:  Mike Ledwith
+    group: 4

@@ -2,25 +2,11 @@
   <title><%= page_title "About" %></title>
 <% end %>
 
-		<div id="sectionnavbar">
-				<ul>
-					<!--<li><a href="./club.html" class="active">Introduction</a></li>
-					<li><a href="./location.html">Location</a></li>
-					<li><a href="./membership.html">Membership</a></li>
-					<li><a href="./committees.html">Committees</a></li>
-					<li><a href="./handbook.html">Handbook</a></li>-->
-					<%= link_to "club", :class => "active" %>
-					<%= link_to "location" %>
-					<%= link_to "membership" %>
-					<%= link_to "committees" %>
-					<%= link_to "handbook" %> 
-				</ul>
-		</div>	
+    <%= section_name "Introduction" %>
+    <%= partial "partials/clubsectionnav" %>
 
 		<div id="page">
 
-			
-			
 			<div id="content">
 				<div class="pagetext">
 				

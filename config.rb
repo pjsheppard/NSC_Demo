@@ -82,6 +82,12 @@ helpers do
     site_name + " | " + pagename
   end
   
+  # section_name method
+  def section_name(sectionname)
+    @current_section_name = sectionname
+    return nil
+  end
+  
   # nav_link method
   def nav_link(args)
     displayname = args[:displayname]
@@ -96,6 +102,22 @@ helpers do
       activeclass = displayname == @current_page_name ? " class=\"active\" " : " "
     end
     "<a href=\"" + target + "\"" + activeclass + ">" + displayname + "</a>"
+  end
+  
+  # section_nav_link method
+  def section_nav_link(args)
+    displayname = args[:displayname]
+    target = args[:target]
+    last = args[:lastlink]
+    
+    activeclass = ""
+    
+    if last == true then
+      activeclass = displayname == @current_section_name ? " class=\"active last\" " : " class=\"last\" "
+    else
+      activeclass = displayname == @current_section_name ? " class=\"active\" " : " "
+    end
+    "<a href=\"" + target + "\"" + activeclass + ">" + displayname + "</a>"    
   end
   
 end

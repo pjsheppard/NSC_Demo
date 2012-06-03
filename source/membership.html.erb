@@ -2,15 +2,8 @@
   <title><%= page_title "About" %></title>
 <% end %>
 
-		<div id="sectionnavbar">
-				<ul>
-					<li><a href="./club.html">Introduction</a></li>
-					<li><a href="./location.html">Location</a></li>
-					<li><a href="./membership.html" class="active">Membership</a></li>
-					<li><a href="./committees.html">Committees</a></li>
-					<li><a href="./handbook.html">Handbook</a></li>
-				</ul>
-		</div>		
+    <%= section_name "Membership" %>
+    <%= partial "partials/clubsectionnav" %>	
 
 		<div id="page">
 
@@ -24,10 +17,11 @@
 					 RYA recognised training courses.<br>
 					 <br>
 					 We run a full racing programme from March until Boxing Day.</P>
-					
-          <%= partial "partials/content/schedule_of_fees" %>
-          
+				         
 				</div>
+				
+				
+			
 			</div>
 			
 			<div id="sidebar">
@@ -37,11 +31,9 @@
 					<h3>Phil Sheppard</h3>
 					<p>Membership Secretary</p>
 				</div>
-				
-				<div id="imagelist" >
-					<ul>
-						<li><img src="./images/IMG_5305cs.png" alt="sailing"></li>
-					</ul>
-				</div>
+								
 			</div>
+				
+			<%= partial "partials/content/schedule_of_fees" %>
+				
 		</div>

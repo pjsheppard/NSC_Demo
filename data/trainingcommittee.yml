@@ -1,0 +1,17 @@
+---
+  - title: Juniors
+    avatar: ./images/stock_avatar.png
+    name:  David Howard
+    group: 1
+  - title: Power Boat
+    avatar: ./images/stock_avatar.png
+    name:  Nigel Nurse
+    group: 1
+  - title: Secretary
+    avatar: ./images/stock_avatar.png
+    name:  Mike Ledwith
+    group: 1
+  - title: Bookings
+    avatar: ./images/stock_avatar.png
+    name:  Jim Penniston
+    group: 1

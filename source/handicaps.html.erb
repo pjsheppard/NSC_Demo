@@ -2,13 +2,8 @@
   <title><%= page_title "Results" %></title>
 <% end %>
 
-		<div id="sectionnavbar">
-				<ul>
-					<li><a href="./results.html">Club Results</a></li>
-					<li><a href="./handicaps.html" class="active">Personal Handicaps</a></li>
-					<li><a href="./py.html">Club PY numbers</a></li>
-				</ul>
-		</div>
+    <%= section_name "Personal Handicaps" %>
+    <%= partial "partials/resultssectionnav" %>
 		
 		<div id="page">
 

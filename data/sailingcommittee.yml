@@ -1,0 +1,42 @@
+---
+  - title: Chairman
+    avatar: ./images/stock_avatar.png
+    name:  Chris Abbott
+    group: 1
+  - title: Honorary Sailing Secretary
+    avatar: ./images/stock_avatar.png
+    name:  Nigel Nurse
+    group: 1
+  - title: Honorary Training Secretary
+    avatar: ./images/stock_avatar.png
+    name:  Mike Ledwith
+    group: 1
+  - title: Honorary Bosun
+    avatar: ./images/stock_avatar.png
+    name:  Phil Purkis
+    group: 1
+  - title: none
+    avatar: ./images/stock_avatar.png
+    name:  Graham Hasnip
+    group: 2
+  - title: none
+    avatar: ./images/stock_avatar.png
+    name:  Roger Poat
+    group: 2
+  - title: none
+    avatar: ./images/stock_avatar.png
+    name:  Susan Jones
+    group: 2
+  - title: none
+    avatar: ./images/stock_avatar.png
+    name:  Simon Limb
+    group: 2        
+  - title: none
+    avatar: ./images/stock_avatar.png
+    name:  David Howard
+    group: 2    
+    
+    
+    
+    
+    

@@ -19,3 +19,5 @@
     price: £23
   - fee: Temporary Members (per month)
     price: £15
+  - fee: Test Fee
+    price: £345

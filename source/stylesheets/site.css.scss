@@ -62,15 +62,9 @@ body
 			//border-bottom-style: solid;
 			//border-color: $brand-color-darker;
 			//border-width: 12px;
-			//background-image:url("../images/NSC.png");
-			//height: 190px;
-			
-
-      #logoimage
-      {
-        @include float-left;
-        margin-left: 10px;
-      }
+			background-image:url("../images/header_banner.png");
+			background-repeat: no-repeat;
+			height: 190px;
 
 			a
 			{
@@ -78,18 +72,42 @@ body
 				text-decoration: none;
 			}
 
-			h1
-			{
-				font-size: 3em;
-				color: $function-color;
-				margin: 10px 0px 10px 0px;
-				margin-left: 10px;
-				line-height: 2em;
-			}
+      #textbackground
+      {
+        position: relative;
+        top: 0px;
+        right: 0px;
+        background-color: $brand-color-light;
+        opacity: 0.80;
+        width: auto;
+        height: auto;
 			
 
+        #titlearea
+        {
+          position: inherit;
+        
+          #logoimage
+          {
+            @include float-left;
+            margin-left: 10px;
+            opacity: 1.0;
+          }
+      
+          h1
+          {
+            font-size: 3em;
+            color: $function-color;
+            //margin: 10px 0px 10px 0px;
+            margin-left: 10px;
+            line-height: 2em;
+            opacity: 1.0;
+      
+          }
+        }
+      }
+    }
 				
-		}
 
     #navbar
     {
@@ -282,13 +300,14 @@ body
           border-width: 1px;
           padding: 10px;
           
-          margin-bottom: 10px;
+          margin: 10px;
         }
         
         table
         {
           
-          margin-bottom: 20px;
+          margin: 20px;
+          border-spacing: 5px;
         
           img
           {
@@ -314,6 +333,7 @@ body
             color: $brand-color;
             text: small-caps;
             font-size: 1.25em;
+            line-height: 1.25em;
           }
           
           .name
